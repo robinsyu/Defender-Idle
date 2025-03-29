@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defender Idle - Strategic Tower Defense Idle Game | Play Online</title>
+    <meta name="description" content="Play Defender Idle online for free. Build towers, upgrade defenses and strategically idle your way to victory in this addictive tower defense game.">
+    <link rel="canonical" href="https://www.defenderidle.one/">
+    <meta name="keywords" content="defender idle, tower defense, idle game, strategy game, online game">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://www.crazygames.com/game-thumbnail/defender-idle-2" sizes="32x32">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2B3A67',
+                        secondary: '#496A81',
+                        accent: '#66999B',
+                        light: '#B3C5D7',
+                        dark: '#1D2731',
+                    },
+                    fontFamily: {
+                        heading: ['Courier New', 'monospace'],
+                        body: ['Comic Sans MS', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Sketchy Style Elements */
+        .sketchy-border {
+            border: 2px solid #000;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            box-shadow: 3px 3px 0 #000;
+            transition: all 0.2s ease;
+        }
+        
+        .sketchy-btn {
+            border: 2px solid #000;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            padding: 0.5rem 1rem;
+            box-shadow: 3px 3px 0 #000;
+            transition: all 0.1s ease;
+            background: white;
+        }
+        
+        .sketchy-btn:hover {
+            box-shadow: 1px 1px 0 #000;
+            transform: translate(2px, 2px);
+        }
+        
+        .sketchy-container {
+            border: 2px solid #000;
+            border-radius: 15px 255px 15px 255px/255px 15px 255px 15px;
+            padding: 1rem;
+            box-shadow: 5px 5px 0 #000;
+            background: white;
+        }
+        
+        .sketchy-title {
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 0 #ccc;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .sketchy-title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 0.25rem;
+            background: #000;
+            bottom: -0.25rem;
+            left: 0;
+            border-radius: 50%;
+            box-shadow: 1px 1px 0 #555;
+        }
+        
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 70vh;
+        }
+        
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 4/3;
+            }
+        }
+        
+        /* Hand-drawn background */
+        .bg-sketch {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23bbb' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-light bg-sketch min-h-screen font-body text-dark">
+    <header class="py-8 bg-primary text-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="sketchy-container bg-accent bg-opacity-90 mb-6 max-w-4xl mx-auto">
+                <h1 class="sketchy-title text-4xl md:text-6xl font-bold mb-4 text-center">Defender Idle</h1>
+                <p class="text-xl md:text-2xl text-center italic">Build, upgrade, and strategically defend your territory in this addictive idle tower defense game!</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-6 py-8">
+        <!-- Game Container -->
+        <div class="sketchy-border game-container w-full mb-12 mx-auto max-w-5xl overflow-hidden bg-white">
+            <iframe 
+                src="https://www.crazygames.com/embed/defender-idle-2" 
+                class="w-full h-full"
+                title="Play Defender Idle Game Online"
+                allow="fullscreen"
+                allowfullscreen="true"
+                frameborder="0">
+            </iframe>
+        </div>
+        
+        <!-- Game Info -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="sketchy-container">
+                <h2 class="sketchy-title text-2xl md:text-3xl mb-4">Game Overview</h2>
+                <p class="mb-4">Defender Idle combines the best elements of tower defense and idle games into one addictive experience. Set up your defensive towers, upgrade your capabilities, and watch as your defenses automatically repel wave after wave of enemies.</p>
+                <p>With strategic placement and thoughtful resource management, you'll build an unstoppable defensive force that works even when you're away from the game!</p>
+            </div>
+            
+            <div class="sketchy-container">
+                <h2 class="sketchy-title text-2xl md:text-3xl mb-4">How To Play</h2>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Place different types of defensive towers along the enemy path</li>
+                    <li>Collect resources from defeated enemies</li>
+                    <li>Upgrade your towers to increase their damage and range</li>
+                    <li>Unlock new tower types and special abilities</li>
+                    <li>Set up your strategy and watch your defenses work automatically</li>
+                    <li>Return to collect rewards and further enhance your defenses</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="sketchy-container mb-12">
+            <h2 class="sketchy-title text-2xl md:text-3xl mb-6 text-center">Game Features</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-4 sketchy-border bg-light">
+                    <h3 class="font-heading font-bold text-xl mb-2">Strategic Tower Placement</h3>
+                    <p>Position your defensive towers strategically along the enemy path to maximize their effectiveness against different types of enemies.</p>
+                </div>
+                
+                <div class="p-4 sketchy-border bg-light">
+                    <h3 class="font-heading font-bold text-xl mb-2">Idle Progression</h3>
+                    <p>Your defenses continue working even when you're not playing, allowing you to collect resources and advance without constant attention.</p>
+                </div>
+                
+                <div class="p-4 sketchy-border bg-light">
+                    <h3 class="font-heading font-bold text-xl mb-2">Multiple Tower Types</h3>
+                    <p>Unlock and upgrade a variety of tower types, each with unique abilities and attack patterns to counter different enemy threats.</p>
+                </div>
+                
+                <div class="p-4 sketchy-border bg-light">
+                    <h3 class="font-heading font-bold text-xl mb-2">Upgrade System</h3>
+                    <p>Invest your resources in upgrading towers, unlocking new abilities, and enhancing your overall defensive capabilities.</p>
+                </div>
+                
+                <div class="p-4 sketchy-border bg-light">
+                    <h3 class="font-heading font-bold text-xl mb-2">Challenging Waves</h3>
+                    <p>Face increasingly difficult waves of enemies that will test your strategic planning and tower placement skills.</p>
+                </div>
+                
+                <div class="p-4 sketchy-border bg-light">
+                    <h3 class="font-heading font-bold text-xl mb-2">Endless Gameplay</h3>
+                    <p>With no definitive end, you can continue improving and optimizing your defenses indefinitely for higher scores.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tips & Strategies -->
+        <div class="sketchy-container mb-12">
+            <h2 class="sketchy-title text-2xl md:text-3xl mb-4">Tips & Strategies</h2>
+            <div class="space-y-4">
+                <p>For beginners, we recommend focusing on a few strong towers rather than many weak ones. Position your towers at choke points where enemies must pass to maximize damage.</p>
+                <p>More experienced players should experiment with complementary tower combinations - some towers work best together, creating synergies that multiply their effectiveness.</p>
+                <p>Remember that idle games are about patience and strategy. Let your defenses work for you over time, and return to collect resources and make upgrades that will exponentially increase your efficiency.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2025 DefenderIdle.one - All rights reserved</p>
+            <p class="text-sm opacity-75">Defender Idle is an addictive tower defense idle game where strategy meets automated gameplay.</p>
+            <div class="mt-4">
+                <button class="sketchy-btn text-dark hover:bg-accent mx-2 my-1">Privacy Policy</button>
+                <button class="sketchy-btn text-dark hover:bg-accent mx-2 my-1">Terms of Service</button>
+                <button class="sketchy-btn text-dark hover:bg-accent mx-2 my-1">Contact Us</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
